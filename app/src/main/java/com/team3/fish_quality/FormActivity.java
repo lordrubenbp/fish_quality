@@ -46,5 +46,11 @@ public class FormActivity extends AppCompatActivity  {
 
     }
 
+    public void onClickEnd(View view)
+    {
+        Intent intent= new Intent(getApplicationContext(),ResultActivity.class);
+        startActivity(intent);
+    }
+
 }
 

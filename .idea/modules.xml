@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Fran\StudioProjects\fish_quality\app\app.iml" filepath="C:\Users\Fran\StudioProjects\fish_quality\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/fish_quality.iml" filepath="$PROJECT_DIR$/fish_quality.iml" />
-      <module fileurl="file://C:\Users\Fran\StudioProjects\fish_quality\fish_quality.iml" filepath="C:\Users\Fran\StudioProjects\fish_quality\fish_quality.iml" />
     </modules>
   </component>
 </project>

@@ -2,6 +2,8 @@ package com.team3.fish_quality;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -22,9 +24,6 @@ public class Screen2 extends Fragment {
     int totalProgreso2=0;
     int totalProgreso3=0;
 
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,6 +41,13 @@ public class Screen2 extends Fragment {
 
         SeekBar seekBar3 = (SeekBar) rootView.findViewById(R.id.seekBar3);
         final TextView progreso3=(TextView)rootView.findViewById(R.id.porcentaje3);
+
+        FragmentManager childFragMan = getChildFragmentManager();
+        FragmentTransaction childFragTrans = childFragMan.beginTransaction();
+        Map mapFrag = new Map();
+        childFragTrans.add(R.id.frame_container, mapFrag);
+        childFragTrans.addToBackStack("B");
+        childFragTrans.commit();
 
         seekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 

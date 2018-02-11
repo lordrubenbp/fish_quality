@@ -1,9 +1,5 @@
 package com.team3.fish_quality;
 
-/**
- * Created by ruben on 10/02/2018.
- */
-
 public  class DataSet {
 
 
@@ -14,5 +10,8 @@ public  class DataSet {
     public static float feedPercentageFish=0f;
     public static float feedPercentageOthers=0f;
 
-
+    public static float latitude=0f;
+    public static float longitude=0f;
+    public static float[] monthlyAverageTemp = {0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f};
+    public static float[] monthlyAverageSolarPower = {0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f};
 }

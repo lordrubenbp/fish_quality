@@ -30,6 +30,8 @@ public class Map extends Fragment
 
     ArrayList<LatLng> markerPoints;
 
+    boolean requestingData = false;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -84,8 +86,36 @@ public class Map extends Fragment
                     @Override
                     public void onMapClick(LatLng location)
                     {
-                        googleMap.addMarker(new MarkerOptions().position(location).
-                                title("Instalación").snippet("Instalación"));
+                        if (!requestingData)
+                        {
+                            requestingData = true;
+
+                            googleMap.clear();
+                            googleMap.addMarker(new MarkerOptions().position(location).
+                                    title("Instalación").snippet("Instalación"));
+
+                            DataSet.latitude = (float) location.latitude;
+                            DataSet.longitude = (float) location.longitude;
+
+                            new WebService(getActivity(),
+                                    "https://eosweb.larc.nasa.gov/cgi-bin/sse/grid.cgi?num=0&p=swvdwncook&p=TSKIN_MN&lat="
+                                            + String.valueOf(DataSet.latitude) + "&lon=" + String.valueOf(DataSet.longitude),
+                                    new WebService.OnTaskDoneListener()
+                                    {
+                                        @Override
+                                        public void onTaskDone(String responseData)
+                                        {
+                                            NASAScraper.Scrape(responseData);
+                                            requestingData = false;
+                                        }
+                                        @Override
+                                        public void onError()
+                                        {
+                                            googleMap.clear();
+                                            requestingData = false;
+                                        }
+                                    }).execute();
+                        }
                     }
                 });
             }

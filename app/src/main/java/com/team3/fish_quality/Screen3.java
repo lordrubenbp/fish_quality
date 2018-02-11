@@ -16,6 +16,8 @@ public class Screen3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.screen_activity, container, false);
+        final View rootView=inflater.inflate(R.layout.screen3_activity, container, false);
+
+        return rootView;
     }
 }

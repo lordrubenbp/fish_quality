@@ -26,6 +26,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ResultActivity"
             android:label="@string/title_activity_result"></activity>
+        <activity android:name=".ReportActivity"
+            android:label="@string/title_activity_report"></activity>
 
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBbgsEfU7oSerZIpWsHBt210l4RrdKA7qs"/>
 

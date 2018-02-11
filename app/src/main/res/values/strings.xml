@@ -12,4 +12,5 @@
     <string name="extensive">extensiva</string>
     <string name="intensive">intensiva</string>
     <string name="title_activity_result">ResultActivity</string>
+    <string name="title_activity_report">ReportActivity</string>
 </resources>

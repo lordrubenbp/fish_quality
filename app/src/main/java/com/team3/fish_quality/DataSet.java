@@ -113,9 +113,9 @@ public  class DataSet
 
     public static void calculateOP()
     {
-        If = Ii * (malimento - masaAlgas) / malimento;
         Ii = feedPercentageCereals + feedPercentageFish;
-        OP = Ii / If;
+        If = Ii * (malimento - masaAlgas) / malimento;
+        OP = If / Ii;
     }
 
     public static float CE;

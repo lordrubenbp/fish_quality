@@ -39,15 +39,12 @@ public class FormActivityAdapter extends FragmentPagerAdapter {
                 Screen3 screen3 = new Screen3();
 
                 return screen3;
-            case 3:
+            default:
                 Screen4 screen4 = new Screen4();
 
                 return screen4;
 
-            default:
-                Screen5 screen5 = new Screen5();
 
-                return screen5;
 
 
         }
@@ -55,7 +52,7 @@ public class FormActivityAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 5;
+        return 4;
     }
 
     @Override
@@ -70,11 +67,10 @@ public class FormActivityAdapter extends FragmentPagerAdapter {
 
             case 2:
                 return mContext.getString(R.string.screen3);
-            case 3:
+            default:
                 return mContext.getString(R.string.screen4);
 
-            default:
-                return mContext.getString(R.string.screen5);
+
 
         }
 

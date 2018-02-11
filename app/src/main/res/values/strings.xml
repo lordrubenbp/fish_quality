@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">fish_quality_seal</string>
-    <string name="screen1">screeen1</string>
-    <string name="screen2">screen2</string>
-    <string name="screen3">screen3</string>
-    <string name="screen4">screen4</string>
+    <string name="screen1">Paso 1</string>
+    <string name="screen2">Paso 2</string>
+    <string name="screen3">Paso 3</string>
+    <string name="screen4">Paso 4</string>
     <string name="screen5">screen5</string>
     <string name="screen6">screen6</string>
     <string name="title_activity_main">MainActivity</string>
@@ -11,6 +11,10 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="extensive">extensiva</string>
     <string name="intensive">intensiva</string>
-    <string name="title_activity_result">ResultActivity</string>
-    <string name="title_activity_report">ReportActivity</string>
+    <string name="title_activity_result">Resultado de la evaluación</string>
+    <string name="hrap">HRAP</string>
+    <string name="uv">Ultravioleta</string>
+    <string name="lechobac">L.Bacteriano</string>
+    <string name="rototamiz">Rototamiz</string>
+    <string name="sodis">SODIS</string>
 </resources>

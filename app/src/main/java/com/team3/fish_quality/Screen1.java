@@ -5,8 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 /**
  * Created by ruben on 10/02/2018.
@@ -21,28 +21,26 @@ public class Screen1 extends Fragment {
         // Inflate the layout for this fragment
         final View rootView = inflater.inflate(R.layout.screen1_activity, container, false);
 
-        RadioGroup radioGroup = (RadioGroup) rootView.findViewById(R.id.screen1RadioGroup);
-        final RadioButton extensiveRButton=(RadioButton)rootView.findViewById(R.id.extensiveRadioButton);
-        extensiveRButton.setChecked(true);
-        DataSet.kindExplotation ="extensiva";
-        final RadioButton intensiveRButton=(RadioButton)rootView.findViewById(R.id.intensiveRadioButton);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+        LinearLayout extensiva=(LinearLayout)rootView.findViewById(R.id.extensivaIMG);
+        LinearLayout intensiva=(LinearLayout)rootView.findViewById(R.id.intensivaIMG);
+        final ImageView intensivaIMG=(ImageView)rootView.findViewById(R.id.intensivaChange);
+
+
+        extensiva.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-                if(extensiveRButton.isChecked())
-                {
-                    DataSet.kindExplotation ="extensiva";
-
-                }else if (intensiveRButton.isChecked())
-                {
-                    DataSet.kindExplotation ="intensiva";
-                }
+            public void onClick(View view) {
+                DataSet.kindExplotation="extensiva";
             }
         });
 
+        intensiva.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DataSet.kindExplotation="intensiva";
+                intensivaIMG.setImageResource(R.drawable.intensivon);
 
+            }
+        });
         return rootView;
     }
 

@@ -6,8 +6,8 @@
     <string name="screen4">Paso 4</string>
     <string name="screen5">screen5</string>
     <string name="screen6">screen6</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_form">FormActivity</string>
+    <string name="title_activity_main">Inicio</string>
+    <string name="title_activity_form">Inicio</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="extensive">extensiva</string>
     <string name="intensive">intensiva</string>
@@ -18,4 +18,5 @@
     <string name="lechobac">L.Bacteriano</string>
     <string name="rototamiz">Rototamiz</string>
     <string name="sodis">SODIS</string>
+
 </resources>

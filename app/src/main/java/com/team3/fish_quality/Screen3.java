@@ -12,6 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by ruben on 10/02/2018.
  */
@@ -26,6 +28,8 @@ public class Screen3 extends Fragment {
     LinearLayout diagramaPaso3=null;
     ImageView diagramaFlecha4=null;
     LinearLayout diagramaPorcentaje=null;
+    ArrayList<TextView> listDiagramTexts=null;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,9 +43,16 @@ public class Screen3 extends Fragment {
 
         diagramaPorcentaje=(LinearLayout)rootView.findViewById(R.id.diagramaRecirculacionLayout);
 
+        listDiagramTexts= new ArrayList<TextView>();
+
         final TextView  diagramaText1=(TextView)rootView.findViewById(R.id.diagramaText1);
         final TextView  diagramaText2=(TextView)rootView.findViewById(R.id.diagramaText2);
         final TextView  diagramaText3=(TextView)rootView.findViewById(R.id.diagramaText3);
+
+        listDiagramTexts.add(diagramaText1);
+        listDiagramTexts.add(diagramaText2);
+        listDiagramTexts.add(diagramaText3);
+
         final TextView  diagramaPorcentajeText=(TextView)rootView.findViewById(R.id.diagramaPorcentajeRecirculacion);
         final SeekBar diagramaRecirculacionProgress=(SeekBar)rootView.findViewById(R.id.diagramaRecirculacionProgress);
 
@@ -59,8 +70,6 @@ public class Screen3 extends Fragment {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
-
-
             }
 
             @Override
@@ -72,6 +81,7 @@ public class Screen3 extends Fragment {
             public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
 
                 diagramaPorcentajeText.setText("%"+progress);
+                DataSet.recirculationPercent=progress/100f;
 
 
             }
@@ -81,6 +91,7 @@ public class Screen3 extends Fragment {
             public void onClick(View view) {
 
                 state1=carrouselOption(diagramaIMG1,diagramaText1,1,state1);
+                setDataSetParam();
             }
         });
         diagramaPaso2.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +99,7 @@ public class Screen3 extends Fragment {
             public void onClick(View view) {
 
                 state2=carrouselOption(diagramaIMG2,diagramaText2,2,state2);
+                setDataSetParam();
             }
         });
         diagramaPaso3.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +107,7 @@ public class Screen3 extends Fragment {
             public void onClick(View view) {
 
                 state3=carrouselOption(diagramaIMG3,diagramaText3,3,state3);
+                setDataSetParam();
             }
         });
         diagramaFlecha4.setOnClickListener(new View.OnClickListener() {
@@ -181,5 +194,49 @@ public class Screen3 extends Fragment {
             }
 
 
+
+    }
+
+    public void setDataSetParam()
+    {
+        DataSet.hasHRAP=false;
+        DataSet.hasLecho=false;
+        DataSet.hasRototamiz=false;
+        DataSet.hasUV=false;
+        DataSet.hasSODIS=false;
+        for (int i = 0; i < listDiagramTexts.size(); i++) {
+
+            TextView textView=listDiagramTexts.get(i);
+
+            String salida=textView.getText().toString();
+
+            Log.v("SALIDA",textView.getText().toString());
+
+            if(salida.equals("HRAP"))
+            {
+                DataSet.hasHRAP=true;
+
+            }else if(salida.equals("SODIS")){
+
+                DataSet.hasSODIS=true;
+            }else if(salida.equals("Ultravioleta")){
+
+                DataSet.hasUV=true;
+
+            }else if(salida.equals("L.Bacteriano")){
+
+                DataSet.hasLecho=true;
+
+            }else if(salida.equals("Rototamiz")){
+
+                DataSet.hasRototamiz=true;
+
+                }
+        }
+        Log.v("HRAP",DataSet.hasHRAP+"");
+        Log.v("LECHO",DataSet.hasLecho+"");
+        Log.v("ROTOTAMIZ",DataSet.hasRototamiz+"");
+        Log.v("UV",DataSet.hasUV+"");
+        Log.v("SODIS",DataSet.hasSODIS+"");
     }
 }

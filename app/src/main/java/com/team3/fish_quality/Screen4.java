@@ -45,6 +45,7 @@ public class Screen4 extends Fragment {
             public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
 
                 distanciaPorveText.setText(progress+" Km");
+                DataSet.distProveedor=progress;
 
             }
         });
@@ -66,6 +67,7 @@ public class Screen4 extends Fragment {
             public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
 
                 distanciaConsuText.setText(progress+" Km");
+                DataSet.distConsumidor=progress;
 
             }
         });

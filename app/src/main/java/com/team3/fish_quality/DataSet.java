@@ -31,7 +31,6 @@ public  class DataSet
     public static final float aguaEnCereal = 0.5f;    // m^3 / Kg
     public static float malimento;  // Kg / año
     public static final float factorAlimentacionLubina = 4.5f;
-    public static float R;
     public static float consumoCerealConAlgas;   // m^3 / año
     public static float masaAlgas;    // Kg / año
     public static final float productividadAlgas = 100f;   //   g / m^3 / dia
@@ -42,7 +41,7 @@ public  class DataSet
         Qent = production * entradaAguaPorLubina;
         masaAlgas = productividadAlgas * Qent * 0.365f;
         consumoCerealConAlgas = (malimento - masaAlgas) * feedPercentageCereals * aguaEnCereal;
-        QProceso = Qent * (1.0f - R);
+        QProceso = Qent * (1.0f - recirculationPercent);
         Q = QProceso + consumoCerealConAlgas;
         malimento = production * factorAlimentacionLubina;
         consumoCereal = malimento * feedPercentageCereals * aguaEnCereal;

@@ -12,4 +12,9 @@
     <string name="extensive">extensiva</string>
     <string name="intensive">intensiva</string>
     <string name="title_activity_result">ResultActivity</string>
+    <string name="hrap">HRAP</string>
+    <string name="uv">Ultravioleta</string>
+    <string name="lechobac">L.Bacteriano</string>
+    <string name="rototamiz">Rototamiz</string>
+    <string name="sodis">SODIS</string>
 </resources>

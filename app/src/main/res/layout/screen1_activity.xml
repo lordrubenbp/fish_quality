@@ -14,24 +14,47 @@
         android:layout_weight="10"
         android:gravity="center">
 
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/screen1RadioGroup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-            <RadioButton android:id="@+id/extensiveRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/extensive"
-                />
-            <RadioButton android:id="@+id/intensiveRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/intensive"
+        <LinearLayout
+            android:id="@+id/extensivaIMG"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
 
-                />
-        </RadioGroup>
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/extensivo" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Extensiva"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/intensivaIMG"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+
+                android:id="@+id/intensivaChange"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/intensivo" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Intensiva"
+                android:gravity="center"/>
+
+        </LinearLayout>
     </LinearLayout>
 
     <Button

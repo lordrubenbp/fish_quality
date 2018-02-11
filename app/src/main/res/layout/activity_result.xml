@@ -27,7 +27,7 @@
             android:layout_height="300dp"
             android:layout_margin="10dp"
             android:padding="10sp"
-            app:srcCompat="@drawable/aplus" />
+            app:srcCompat="@drawable/b" />
         <Button
             android:id="@+id/reportButton"
             android:layout_width="wrap_content"
@@ -57,7 +57,7 @@
                 android:layout_height="60dp"
 
                 android:layout_margin="10dp"
-                app:srcCompat="@drawable/a" />
+                app:srcCompat="@drawable/b" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -123,7 +123,7 @@
                 android:layout_height="60dp"
 
                 android:layout_margin="10dp"
-                app:srcCompat="@drawable/d" />
+                app:srcCompat="@drawable/a" />
 
             <TextView
                 android:layout_width="wrap_content"

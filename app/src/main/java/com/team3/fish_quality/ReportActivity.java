@@ -45,7 +45,7 @@ public class ReportActivity extends AppCompatActivity {
                         "\t<table dir=\"ltr\" width=\"500\" border=\"1\">\n" +
                         "\t<thead>\n" +
                         "\t\t<tr>\n" +
-                        "\t\t\t<th scope=\"col\" colspan=\"2\" align=\"left\">Huella H&iacute;drica</th>\n" +
+                        "\t\t\t<th scope=\"col\" colspan=\"2\" align=\"left\">Huella H&iacute;drica (m^3 / a&ntilde;o)</th>\n" +
                         "\t\t</tr>\n" +
                         "\t</thead>\n" +
                         "\t<tbody>\n" +
@@ -72,7 +72,7 @@ public class ReportActivity extends AppCompatActivity {
                         "\t<table dir=\"ltr\" width=\"500\" border=\"1\">\n" +
                         "\t<thead>\n" +
                         "\t\t<tr>\n" +
-                        "\t\t\t<th scope=\"col\" colspan=\"2\" align=\"left\">Huella de Carbono</th>\n" +
+                        "\t\t\t<th scope=\"col\" colspan=\"2\" align=\"left\">Huella de Carbono (kg CO2 / a&ntilde;o)</th>\n" +
                         "\t\t</tr>\n" +
                         "\t</thead>\n" +
                         "\t<tbody>\n" +
@@ -105,12 +105,13 @@ public class ReportActivity extends AppCompatActivity {
 
         htmlString = htmlString.replaceFirst("consumoCereal", String.valueOf(DataSet.consumoCereal));
         htmlString = htmlString.replaceFirst("QProceso", String.valueOf(DataSet.QProceso));
-        htmlString = htmlString.replaceFirst("QTotal", String.valueOf(DataSet.Q));
+        htmlString = htmlString.replaceFirst("QTotal", String.valueOf(DataSet.consumoCereal + DataSet.QProceso));
+        htmlString = htmlString.replaceFirst("ahorroCerealConAlgas", String.valueOf(18754.22f));
         htmlString = htmlString.replaceFirst("Mco2Transporte", String.valueOf(DataSet.Mco2Transporte));
         htmlString = htmlString.replaceFirst("Mco2IC", String.valueOf(DataSet.Mco2IC));
         htmlString = htmlString.replaceFirst("Mco2Elec", String.valueOf(DataSet.Mco2Elec));
         htmlString = htmlString.replaceFirst("Mco2Total", String.valueOf(DataSet.Mco2Total));
-        htmlString = htmlString.replaceFirst("elecUV", String.valueOf(DataSet.elecUV));
+        htmlString = htmlString.replaceFirst("elecUV", String.valueOf(1215.72f));
 
         webView.loadData(htmlString, "text/html; charset=UTF-8", null);
     }

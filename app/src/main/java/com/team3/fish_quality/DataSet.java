@@ -21,29 +21,32 @@ public  class DataSet
     public static boolean hasUV = false;
     public static float recirculationPercent = 0f;
 
-    public static String HHReport;
     public static float HH;
     public static float Q;  // m^3 / año
     public static float Qmax;   // m^3 / año
     public static float Qent;   // m^3 / año
     public static float consumoCereal;  // m^3 / año
+    public static float QProceso;
     public static final float entradaAguaPorLubina = 4.5f;    // m^3 / Kg
     public static final float aguaEnCereal = 0.5f;    // m^3 / Kg
     public static float malimento;  // Kg / año
     public static final float factorAlimentacionLubina = 4.5f;
     public static float R;
-    public static float consumoCerealPrime;   // m^3 / año
+    public static float consumoCerealConAlgas;   // m^3 / año
     public static float masaAlgas;    // Kg / año
     public static final float productividadAlgas = 100f;   //   g / m^3 / dia
+    public static float ahorroCerealConAlgas;
 
     private static void calculateHH()
     {
         Qent = production * entradaAguaPorLubina;
         masaAlgas = productividadAlgas * Qent * 0.365f;
-        consumoCerealPrime = (malimento - masaAlgas) * feedPercentageCereals * aguaEnCereal;
-        Q = Qent * (1.0f - R) + consumoCerealPrime;
+        consumoCerealConAlgas = (malimento - masaAlgas) * feedPercentageCereals * aguaEnCereal;
+        QProceso = Qent * (1.0f - R);
+        Q = QProceso + consumoCerealConAlgas;
         malimento = production * factorAlimentacionLubina;
         consumoCereal = malimento * feedPercentageCereals * aguaEnCereal;
+        ahorroCerealConAlgas = consumoCereal - consumoCerealConAlgas;
         Qmax = Qent + consumoCereal;
         HH = Q / Qmax;
     }
